@@ -1,5 +1,7 @@
 import React from 'react'
+/* eslint-disable */
 import { BrowserRouter as Router, Routes, Route, useMatch } from 'react-router-dom'
+/* eslint-enable */
 //import { BrowserRouter as Routes, Route, useMatch } from 'react-router-dom'
 import { useApi } from './useApi'
 import LoadingSpinner from './LoadingSpinner'
