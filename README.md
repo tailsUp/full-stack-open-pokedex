@@ -14,6 +14,9 @@ Start by running `npm install` inside the project folder
 `npm run build` to make a production build
 `npm run start-prod` to run your production build
 
+*** CYPRESS ***
+
+aja: npm run cypress:open
 
 *** TEHDYT TEHÄTÄVÄT ***
 
@@ -23,10 +26,10 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.2 - OK/
 11.3 - OK/
 11.4 - OK/
-11.5 - 
-11.6 - 
-11.7 - 
-11.8 - 
+11.5 - OK/
+11.6 - OK/
+11.7 - OK/
+11.8 - OK/
 11.9 - 
 11.10 - 
 11.11 - 
