@@ -30,7 +30,7 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.6 - OK/
 11.7 - OK/
 11.8 - OK/
-11.9 - 
+11.9 - OK/
 11.10 - 
 11.11 - 
 11.12 - 
