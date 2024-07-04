@@ -12,4 +12,4 @@ npm run build
 
 echo "*** RUN PRODUCTION BUILD ***"
 
-npm run start-prod
+#npm run start-prod
