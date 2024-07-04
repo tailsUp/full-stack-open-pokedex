@@ -4,12 +4,12 @@ echo "Build Script Has Been Called"
 
 echo "*** NPM INSTALL ***"
 
-run npm run install
+npm install
 
-echo "*** RUN BUILD ***"
+#echo "*** RUN BUILD ***"
 
-run npm run build
+#npm run build
 
 echo "*** RUN PRODUCTION BUILD ***"
 
-run npm run start-prod
+npm run start-prod
