@@ -8,7 +8,7 @@ npm install
 
 #echo "*** RUN BUILD ***"
 
-#npm run build
+npm run build
 
 echo "*** RUN PRODUCTION BUILD ***"
 
