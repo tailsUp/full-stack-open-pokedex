@@ -22,17 +22,17 @@ aja: npm run cypress:open
 
 Huom! Kaikki pitää olla tehtynä että saa pisteet.
 
-11.1 - OK/
-11.2 - OK/
-11.3 - OK/
-11.4 - OK/
-11.5 - OK/
-11.6 - OK/
-11.7 - OK/
-11.8 - OK/
-11.9 - OK/
-11.10 - 
-11.11 - 
+11.1 - OK\
+11.2 - OK\
+11.3 - OK\
+11.4 - OK\
+11.5 - OK\
+11.6 - OK\
+11.7 - OK\
+11.8 - OK\
+11.9 - OK\
+11.10 - OK\
+11.11 -
 11.12 - 
 11.13 - 
 11.14 - 
