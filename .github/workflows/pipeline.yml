@@ -27,6 +27,8 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:3003
+      #- name: HEALTH CHECK FOR SERVICE
+      #  run: 
       - name: Trigger deployment
         env:
           deploy_url: ${{ secrets.DEPLOY_HOOK_URL }}
