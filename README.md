@@ -48,3 +48,6 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.24 - 
 11.25 - 
 11.26 - 
+
+
+MUUTOS DEVELOP HAARAAN ETTÄ SAADAAN PULL REQUEST AIKAISEKSI!
