@@ -35,7 +35,7 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.11 - OK\
 11.12 - OK\
 11.13 - OK\
-11.14 - 
+11.14 - OK\
 11.15 - 
 11.16 - 
 11.17 - 
