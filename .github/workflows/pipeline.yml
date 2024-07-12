@@ -30,8 +30,8 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:3003
+      - if: ${{ github.event_name == 'push' }}
       - name: Trigger deployment
-        if: ${{ github.event_name == 'push' }}
         env:
           deploy_url: ${{ secrets.DEPLOY_HOOK_URL }}
         run: |
