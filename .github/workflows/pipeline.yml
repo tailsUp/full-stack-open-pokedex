@@ -32,7 +32,7 @@ jobs:
           wait-on: http://localhost:3003
       - name: Trigger deployment
         if: ${{ github.event_name == 'push' }}
-          env:
-            deploy_url: ${{ secrets.DEPLOY_HOOK_URL }}
-          run: |
-            curl "$deploy_url"
+        env:
+          deploy_url: ${{ secrets.DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
