@@ -36,7 +36,7 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.12 - OK\
 11.13 - OK\
 11.14 - OK\
-11.15 - 
+11.15 - OK\
 11.16 - 
 11.17 - 
 11.18 - 
@@ -48,6 +48,3 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.24 - 
 11.25 - 
 11.26 - 
-
-
-MUUTOS DEVELOP HAARAAN ETTÄ SAADAAN PULL REQUEST AIKAISEKSI!
