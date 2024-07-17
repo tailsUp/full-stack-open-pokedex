@@ -38,6 +38,10 @@ jobs:
           curl "$deploy_url"
   tag_release:
     needs: [simple_deployment_pipeline]
+    - name: Check for SKIP
+      env:
+        SKIP: ${{contains(github.event.commits.*.message, '#skip')}}
+      run: echo "$SKIP"
     if: ${{!contains(github.event.commits.*.message, '#skip')}}
     runs-on: ubuntu-20.04
     steps:
