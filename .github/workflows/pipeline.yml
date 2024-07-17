@@ -47,7 +47,9 @@ jobs:
       - name: Check for SKIP
         env:
           SKIP: ${{contains(github.event.commits.*.message, '#skip')}}
+          ALL: ${{join(github.event.commits.*.message, ' ')}}
         run: echo "OLIKO KOMMENTEISSA SKIP $SKIP"
+        run: echo "JOIN SISÄLTÖ $ALL"
       - name: PRINT COMMITS
         env:
           COMMITS: ${{ toJson(github.event.commits)}}
