@@ -49,4 +49,4 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.25 - 
 11.26 - 
 
-Laitetaan skip kommenttiin.
+Vielä kerran skipillä.
