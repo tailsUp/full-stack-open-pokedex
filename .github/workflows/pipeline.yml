@@ -39,18 +39,12 @@ jobs:
   tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
+    if: ${{!contains(join(github.event.commits.*.message, ' '), '#skip')}}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Check for SKIP
-        env:
-          SKIP: ${{contains(github.event.commits.*.message, '#skip')}}
-          ALL: ${{join(github.event.commits.*.message, ' ')}}
-          SKIP2: ${{contains(join(github.event.commits.*.message, ' '), '#skip')}}
-        run: echo "OLIKO KOMMENTEISSA SKIP $SKIP2"
-      if: ${{!contains(join(github.event.commits.*.message, ' '), '#skip')}}
       - name: PRINT COMMITS
         env:
           COMMITS: ${{ toJson(github.event.commits)}}
@@ -67,3 +61,10 @@ jobs:
           DEFAULT_BUMP: patch
 
 # if: ${{!contains(github.event.commits.*.message, '#skip')}}
+
+# - name: Check for SKIP
+#    env:
+#     SKIP: ${{contains(github.event.commits.*.message, '#skip')}}
+#     ALL: ${{join(github.event.commits.*.message, ' ')}}
+#     SKIP2: ${{contains(join(github.event.commits.*.message, ' '), '#skip')}}
+#    run: echo "OLIKO KOMMENTEISSA SKIP $SKIP2"
