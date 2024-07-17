@@ -38,13 +38,12 @@ jobs:
           curl "$deploy_url"
   tag_release:
     needs: [simple_deployment_pipeline]
-    - name: Check for SKIP
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check for SKIP
       env:
         SKIP: ${{contains(github.event.commits.*.message, '#skip')}}
       run: echo "$SKIP"
-    if: ${{!contains(github.event.commits.*.message, '#skip')}}
-    runs-on: ubuntu-20.04
-    steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -63,3 +62,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           DEFAULT_BUMP: patch
+
+# if: ${{!contains(github.event.commits.*.message, '#skip')}}
