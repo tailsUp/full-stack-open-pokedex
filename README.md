@@ -48,3 +48,5 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.24 - 
 11.25 - 
 11.26 - 
+
+ONGELMA PUSH KANSSA
