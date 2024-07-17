@@ -38,7 +38,7 @@ jobs:
           curl "$deploy_url"
   tag_release:
     needs: [simple_deployment_pipeline]
-    if: "!contains(github.event.commits.*.message, '#skip')"
+    if: ${{ "!contains(github.event.commits.*.message, '#skip')" }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
