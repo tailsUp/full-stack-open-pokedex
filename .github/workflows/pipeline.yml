@@ -40,14 +40,14 @@ jobs:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
     steps:
-      - name: Check for SKIP
-      env:
-        SKIP: ${{contains(github.event.commits.*.message, '#skip')}}
-      run: echo "$SKIP"
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Check for SKIP
+        env:
+          SKIP: ${{contains(github.event.commits.*.message, '#skip')}}
+        run: echo "OLIKO KOMMENTEISSA SKIP $SKIP"
       - name: PRINT COMMITS
         env:
           COMMITS: ${{ toJson(github.event.commits)}}
