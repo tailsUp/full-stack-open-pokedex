@@ -49,4 +49,4 @@ Huom! Kaikki pitää olla tehtynä että saa pisteet.
 11.25 - 
 11.26 - 
 
-testaan simple_deployment läpi meno.s
+dsdsadsadsd
