@@ -70,7 +70,10 @@ jobs:
         if: ${{ success() }}
         with:
           severity: info
-          details: New version was built.
+          username: tailsUp
+          color: '#008000'
+          description: New version has been built.
+          text: BUILD SUCCESS!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
 # if: ${{!contains(github.event.commits.*.message, '#skip')}}
