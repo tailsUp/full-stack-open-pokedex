@@ -2,7 +2,7 @@ name: Scheduled health check to Pokedex
 
 on:
   schedule:
-    - cron: '30 22 * * *'
+    - cron: '35 22 * * *'
 
 jobs:
   health_check:
@@ -29,6 +29,5 @@ jobs:
           severity: info
           username: tailsUp
           color: '#008000'
-          description: 'Pokedex' healthcheck.
-          text: Website has responded!
+          details: Health check has succeeded.
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
