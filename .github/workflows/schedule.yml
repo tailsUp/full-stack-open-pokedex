@@ -1,0 +1,34 @@
+name: Scheduled health check to Pokedex
+
+on:
+  schedule:
+    - cron: '30 22 * * *'
+
+jobs:
+  health_check:
+    steps:
+      - name: Health check
+        uses: jtalk/url-health-check-action@v4
+        with:
+          # Tarkistetaan pokedex url
+          url: https://full-stack-open-pokedex-snkr.onrender.com
+          # Follow redirects, or just report success on 3xx status codes
+          follow-redirect: false # Optional, defaults to "false"
+          # Fail this action after this many failed attempts
+          max-attempts: 1 # Optional, defaults to 1
+          # Delay between retries
+          # retry-delay: 5s # Optional, only applicable to max-attempts > 1
+          # Retry all errors, including 404. This option might trigger curl upgrade.
+          # retry-all: false # Optional, defaults to "false"
+  health_check_OK:
+    needs: [health_check]
+    steps:
+      - name: Health check was success
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+          severity: info
+          username: tailsUp
+          color: '#008000'
+          description: 'Pokedex' healthcheck.
+          text: Website has responded!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
