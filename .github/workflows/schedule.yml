@@ -1,4 +1,4 @@
-name: Scheduled health check to Pokedex
+name: Healthcheck pipeline
 
 on:
   schedule:
