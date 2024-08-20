@@ -71,18 +71,20 @@ jobs:
         with:
           severity: info
           username: tailsUp
-          color: '#008000'
+          color: '#ff00aa'
           description: New version has been built.
+          footer: Build is running in render.
           text: BUILD SUCCESS!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-
-# if: ${{!contains(github.event.commits.*.message, '#skip')}}
-
-
-# - name: Check for SKIP
-#    env:
-#     SKIP: ${{contains(github.event.commits.*.message, '#skip')}}
-#     ALL: ${{join(github.event.commits.*.message, ' ')}}
-#     SKIP2: ${{contains(join(github.event.commits.*.message, ' '), '#skip')}}
-#    run: echo "OLIKO KOMMENTEISSA SKIP $SKIP2"
-
+        
+        
+        
+        
+        
+        #with:
+        #  severity: info
+        #  username: tailsUp
+        #  color: '#008000'
+        #  description: New version has been built.
+        #  text: BUILD SUCCESS!
+        #  webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
