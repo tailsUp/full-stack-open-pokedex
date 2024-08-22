@@ -47,11 +47,11 @@ jobs:
           node-version: '20'
       - name: PRINT COMMITS
         env:
-          COMMITS: ${{ toJson(github.event.commits)}}
+          COMMITS: ${{ toJson(github.event.commits) }}
         run: echo "$COMMITS"
       - name: PRINT COMMIT MESSAGES
         env:
-          MESSAGES: ${{ toJson(github.event.commits.*.message)}}
+          MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$MESSAGES"
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.70.0
@@ -76,11 +76,6 @@ jobs:
           footer: Build is running in render.
           text: BUILD SUCCESS!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-        
-        
-        
-        
-        
         #with:
         #  severity: info
         #  username: tailsUp
