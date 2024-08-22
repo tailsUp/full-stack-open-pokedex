@@ -71,8 +71,9 @@ jobs:
         with:
           severity: info
           username: tailsUp
-          color: '#ff00aa'
           description: New version has been built.
           footer: Build is running in render.
           text: BUILD SUCCESS!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
+#          color: '#ff00aa'
