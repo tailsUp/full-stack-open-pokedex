@@ -58,6 +58,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           DEFAULT_BUMP: patch
+      - name: The job has succeeded
+        if: success()
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+          severity: info
+          username: tailsUp
+          description: New version has been built.
+          footer: Build is running in render.
+          text: BUILD SUCCESS!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
+
       #- name: The job has failed
       #  if: cancelled()
       #  uses: rjstone/discord-webhook-notify@v1
