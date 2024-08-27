@@ -64,6 +64,12 @@ jobs:
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           message: "BUILD WAS SUCESFULL"
+      - name: FAILURE
+        if: failure()
+        uses: discord-actions/message@v2
+        with:
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: "BUILD HAS FAILED"
 
 
       #- name: The job has failed
