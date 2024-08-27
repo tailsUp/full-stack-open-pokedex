@@ -2,7 +2,7 @@ name: Healthcheck pipeline
 
 on:
   schedule:
-    - cron: '30 18 * * *'
+    - cron: '30 12 * * *'
 
 jobs:
   health_check:
@@ -17,21 +17,40 @@ jobs:
     if: ${{ health_check.result != 'failure'  }}
     steps:
       - name: Health check was success
-        uses: rjstone/discord-webhook-notify@v1
+        uses: discord-actions/message@v2
         with:
-          severity: error
-          username: tailsUp
-          details: Health check has FAILED!.
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: "Scheduled check has reached webpage."
   health_check_notify_OK:
     needs: [health_check]
     if: ${{ health_check.result != 'success'  }}
     steps:
       - name: Health check was success
-        uses: rjstone/discord-webhook-notify@v1
+        uses: discord-actions/message@v2
         with:
-          severity: info
-          username: tailsUp
-          color: '#008000'
-          details: Health check has succeeded.
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: "Scheduled check has noticed that webpage cant be reached."
+
+  #health_check_notify_FALSE:
+  #  needs: [health_check]
+  #  if: ${{ health_check.result != 'failure'  }}
+  #  steps:
+  #    - name: Health check was success
+  #      uses: rjstone/discord-webhook-notify@v1
+  #      with:
+  #        severity: error
+  #        username: tailsUp
+  #        details: Health check has FAILED!.
+  #        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+  #health_check_notify_OK:
+  #  needs: [health_check]
+  #  if: ${{ health_check.result != 'success'  }}
+  #  steps:
+  #    - name: Health check was success
+  #      uses: rjstone/discord-webhook-notify@v1
+  #      with:
+  #        severity: info
+  #        username: tailsUp
+  #        color: '#008000'
+  #        details: Health check has succeeded.
+  #        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
