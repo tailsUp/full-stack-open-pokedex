@@ -58,12 +58,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           DEFAULT_BUMP: patch
-      - name: The job has succeeded
-        uses: rjstone/discord-webhook-notify@v1
+      - name: SUCCESS
         if: success()
+        uses: discord-actions/message@v2
         with:
-          severity: info
-          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: "BUILD WAS SUCESFULL"
 
 
       #- name: The job has failed
@@ -85,3 +85,4 @@ jobs:
       #    webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
 #          color: '#ff00aa'
+
