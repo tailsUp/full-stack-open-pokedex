@@ -2,7 +2,7 @@ name: Healthcheck pipeline
 
 on:
   schedule:
-    - cron: '00 12 * * *'
+    - cron: '15 21 * * *'
 
 jobs:
   health_check:
@@ -22,14 +22,14 @@ jobs:
         uses: stegzilla/discord-notify@v4
         if: success()
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
           title: Health check OK!
           message: 'Scheduled check has reached pokedex.'
       - name: Notify failure
         uses: stegzilla/discord-notify@v4
         if: failure()
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
           title: Health check FAIL!
           message: 'Scheduled check has not reached pokedex.'
   
